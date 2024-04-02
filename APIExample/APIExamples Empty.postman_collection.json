@@ -1,0 +1,583 @@
+{
+	"info": {
+		"_postman_id": "60a5e0b4-b6b1-4a9a-8c0f-c6c7be245f83",
+		"name": "APIExamples Empty",
+		"description": "Esto es una librería de ejemplos para el entorno WAU-LABS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11456518"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "MyHeader - Simple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemInventoryLocation - Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/itemInventoryQuantities",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"itemInventoryQuantities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers?$expand=lines",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "lines"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Simple",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Description\": \"Cabecera Simple\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Description\": \"Cabecera Simple\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers(e68570ac-caf0-ee11-a1ff-7c1e52119887)",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers(e68570ac-caf0-ee11-a1ff-7c1e52119887)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Batch",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Prefer",
+								"value": "odata.continue-on-error",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"requests\": [\r\n\t\t{\r\n\t\t\t\"method\": \"POST\",\r\n\t\t\t\"id\": \"r1\",\r\n\t\t\t\"url\": \"companies(e7b613e3-ebc7-ec11-bb92-000d3a231c91)/headers\",\r\n\t\t\t\"headers\": {\r\n\t\t\t\t\"Content-Type\": \"application/json\",\r\n                \"Prefer\": \"odata.continue-on-error\"\r\n\t\t\t},\r\n\t\t\t\"body\": {\r\n                \"description\": 1,\r\n                \"lines\": [\r\n                    {\r\n                    \"description\": \"Primera línea\"\r\n                    },\r\n                    {\r\n                        \"description\": \"Segunda línea\"\r\n                    }\r\n                ]\r\n\t\t\t}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"method\": \"POST\",\r\n\t\t\t\"id\": \"r2\",\r\n\t\t\t\"url\": \"companies(e7b613e3-ebc7-ec11-bb92-000d3a231c91)/headers\",\r\n\t\t\t\"headers\": {\r\n\t\t\t\t\"Content-Type\": \"application/json\",\r\n                \"Prefer\": \"odata.continue-on-error\"\r\n\t\t\t},\r\n\t\t\t\"body\": {\r\n                \"description\": \"Prueba cabecera batch\",\r\n                \"lines\": [\r\n                    {\r\n                    \"description\": \"Primera línea\"\r\n                    },\r\n                    {\r\n                        \"description\": \"Segunda línea\"\r\n                    }\r\n                ]\r\n\t\t\t}\r\n\t\t},\r\n        {\r\n\t\t\t\"method\": \"POST\",\r\n\t\t\t\"id\": \"r3\",\r\n\t\t\t\"url\": \"companies(e7b613e3-ebc7-ec11-bb92-000d3a231c91)/headers\",\r\n\t\t\t\"headers\": {\r\n\t\t\t\t\"Content-Type\": \"application/json\",\r\n                \"Prefer\": \"odata.continue-on-error\"\r\n\t\t\t},\r\n\t\t\t\"body\": {\r\n                \"description\": \"Prueba cabecera batch 2\",\r\n                \"lines\": [\r\n                    {\r\n                    \"description\": \"Primera línea\"\r\n                    },\r\n                    {\r\n                        \"description\": \"Segunda línea\"\r\n                    }\r\n                ]\r\n\t\t\t}\r\n\t\t}\t\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/$batch",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"$batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Deep",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Deep insert\",\r\n    \"lines\": [\r\n        {\r\n           \"description\": \"Primera línea\"\r\n        },\r\n        {\r\n            \"description\": \"Segunda línea\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Deep Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "If-Match",
+								"value": "*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Deep insert modificado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers(e68570ac-caf0-ee11-a1ff-7c1e52119887)",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers(e68570ac-caf0-ee11-a1ff-7c1e52119887)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyHeader - Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/api/bcDayES/web/v1.0/companies({{CompanyId}})/headers(e68570ac-caf0-ee11-a1ff-7c1e52119887)/Microsoft.NAV.PostHeader",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"api",
+								"bcDayES",
+								"web",
+								"v1.0",
+								"companies({{CompanyId}})",
+								"headers(e68570ac-caf0-ee11-a1ff-7c1e52119887)",
+								"Microsoft.NAV.PostHeader"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ODATA",
+			"item": [
+				{
+					"name": "Metadata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/$metadata",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"$metadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerFechaYHora",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/ExampleOutboundAPI_ObtenerFechaYHora",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"ExampleOutboundAPI_ObtenerFechaYHora"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerProductosJson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/ExampleOutboundAPI_ObtenerProductosJson?company='CRONUS ES'",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"ExampleOutboundAPI_ObtenerProductosJson"
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "'CRONUS ES'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/ExampleOutboundAPI_Ping",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"ExampleOutboundAPI_Ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mayusculas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": \"soy un minion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/ExampleOutboundAPI_Mayusculas",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"ExampleOutboundAPI_Mayusculas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerNombrePrimerCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/ExampleOutboundAPI_ObtenerNombrePrimerCliente?company='CRONUS ES'",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"ExampleOutboundAPI_ObtenerNombrePrimerCliente"
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "'CRONUS ES'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItemExists",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemNo\": \"1964-S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{Entorno}}/ODataV4/ExampleOutboundAPI_ExisteProducto?company='CRONUS ES'",
+							"host": [
+								"{{BaseUrl}}{{Entorno}}"
+							],
+							"path": [
+								"ODataV4",
+								"ExampleOutboundAPI_ExisteProducto"
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "'CRONUS ES'"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}{{Entorno}}/api/v2.0/companies",
+					"host": [
+						"{{BaseUrl}}{{Entorno}}"
+					],
+					"path": [
+						"api",
+						"v2.0",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllAPIS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}{{Entorno}}/api/v2.0/",
+					"host": [
+						"{{BaseUrl}}{{Entorno}}"
+					],
+					"path": [
+						"api",
+						"v2.0",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessTokenUrl",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "BCDayESLab",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "https://api.businesscentral.dynamics.com/.default",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "https://api.businesscentral.dynamics.com/v2.0/IdTenant/"
+		},
+		{
+			"key": "Entorno",
+			"value": "NOMBREENTORNO",
+			"type": "string"
+		},
+		{
+			"key": "CompanyId",
+			"value": "8f8b9802-b3d3-ee11-9050-6045bdc89e4e",
+			"type": "string"
+		}
+	]
+}

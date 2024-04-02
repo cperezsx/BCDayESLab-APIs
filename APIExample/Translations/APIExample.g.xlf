@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="APIExample">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 1677860109 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyHeader - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1677860109 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyHeader - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1677860109 - Field 856236780 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Registered</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyHeader - Field Registered - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1474284742 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyLine - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1474284742 - Field 3046953646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Header Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyLine - Field Header Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1474284742 - Field 702557324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Header No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyLine - Field Header No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1474284742 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table MyLine - Field Line No. - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

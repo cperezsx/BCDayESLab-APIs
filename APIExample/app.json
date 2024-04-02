@@ -1,0 +1,35 @@
+{
+  "id": "e2c1b681-cad4-4c0e-adc6-aca97e7a4f46",
+  "name": "APIExample",
+  "publisher": "BCDayES",
+  "version": "23.0.0.2",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "https://www.businesscentralday.es/",
+  "url": "https://www.businesscentralday.es/",
+  "logo": "./res/Logo.png",
+  "dependencies": [
+
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "23.0.0.0",
+  "idRanges": [
+    {
+      "from": 99000,
+      "to": 99099
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "12.0",
+  "features": [
+    "TranslationFile"
+  ],
+  "target": "Cloud"
+}
